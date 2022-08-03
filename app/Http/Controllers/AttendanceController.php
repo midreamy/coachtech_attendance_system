@@ -13,6 +13,8 @@ class AttendanceController extends Controller
 {
     public function index()
     {
+        $user = Auth::user();
+
         $user_id = Auth::id();
 
         $dt = new Carbon();
@@ -22,7 +24,7 @@ class AttendanceController extends Controller
 
         //勤務開始前
         if (empty($attendance)) {
-            return view('index')->with([
+            return view('index', ['user' => $user])->with([
                 "is_attendance_start" => true,
             ]);
         }
@@ -34,7 +36,7 @@ class AttendanceController extends Controller
 
 
 
-        return view('index');
+        return view('index', ['user' => $user]);
     }
 
     public function show()
