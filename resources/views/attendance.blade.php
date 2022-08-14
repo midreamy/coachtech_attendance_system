@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8">
@@ -14,28 +14,41 @@
     <div>
       <a href="/">ホーム</a>
       <a href="/attendance">日付一覧</a>
-      <a href="/login">ログアウト</a>
+      <form action="{{ route('logout') }}" method="post">
+        @csrf
+        <button>ログアウト</button>
+      </form>
     </div>
   </header>
   <div>
-    <p>date</p>
+    <a href="{!! '/attendance/'.($num-1) !!}">&lt;</a>
+    <p>{{ $fixed_date }}</p>
+    <a href="{!! '/attendance/'.($num+1) !!}">&gt;</a>
   </div>
   <table>
     <tr>
       <th>名前</th>
       <th>勤務開始</th>
       <th>勤務終了</th>
+      <th>休憩時間</th>
+      <th>勤務時間</th>
     </tr>
-    @foreach($items as $item)
+    @foreach($attendances as $attendance)
     <tr>
       <td>
-        {{$item->user->name}}
+        {{$attendance->user->name}}
       </td>
       <td>
-        {{$item->start_time}}
+        {{$attendance->start_time}}
       </td>
       <td>
-        {{$item->end_time}}
+        {{$attendance->end_time}}
+      </td>
+      <td>
+        {{$attendance->rest_sum}}
+      </td>
+      <td>
+        {{$attendance->work_time}}
       </td>
     </tr>
     @endforeach

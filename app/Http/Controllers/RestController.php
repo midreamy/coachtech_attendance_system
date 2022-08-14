@@ -17,12 +17,13 @@ class RestController extends Controller
 
         $dt = new Carbon();
         $date = $dt->toDateString();
+        $time = $dt->toTimeString();
 
         $attendance = Attendance::where('user_id', $id)->where('date', $date)->first();
 
         Rest::create([
             'attendance_id' => $attendance->id,
-            'start_time' => Carbon::now(),
+            'start_time' => $time,
         ]);
 
         return redirect("/");
@@ -34,12 +35,13 @@ class RestController extends Controller
 
         $dt = new Carbon();
         $date = $dt->toDateString();
+        $time = $dt->toTimeString();
 
         $attendance = Attendance::where('user_id', $id)->where('date', $date)->first();
 
-        $endTime = Rest::where('attendance_id', $attendance->id)->latest()->first();
+        $endTime = $attendance->rests->whereNull("end_time")->first();
         $endTime->update([
-            'end_time' => Carbon::now()
+            'end_time' => $time
         ]);
         return redirect("/");
     }

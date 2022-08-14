@@ -8,7 +8,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [AttendanceController::class, 'index']);
 });
 
-Route::get('/attendance', [AttendanceController::class, 'show']);
+Route::get('/attendance/{num}', [AttendanceController::class, 'show']);
 Route::post('/attendance/start', [AttendanceController::class, 'startAttendance']);
 Route::post('/attendance/end', [AttendanceController::class, 'endAttendance']);
 Route::post('/attendance/rest/start', [RestController::class, 'startRest']);

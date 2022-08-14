@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8">
@@ -13,7 +13,7 @@
     <h1>Atte</h1>
     <div>
       <a href="/">ホーム</a>
-      <a href="/attendance">日付一覧</a>
+      <a href="/attendance/0">日付一覧</a>
       <form action="{{ route('logout') }}" method="post">
         @csrf
         <button>ログアウト</button>
@@ -22,7 +22,7 @@
     </div>
   </header>
   <div>
-    <p>{{$user->name}}さんお疲れ様です！</p>
+    <p>{{ Auth::user()->name }}さんお疲れ様です！</p>
   </div>
   <div>
     <form action="/attendance/start" method="post">
