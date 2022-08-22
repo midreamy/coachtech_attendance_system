@@ -1,31 +1,30 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.default')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atte</title>
-</head>
+@section('content')
+<header>
+  <h1>Atte</h1>
+  <nav>
+    <ul>
+      <li><a href="/">ホーム</a></li>
+      <li><a href="/attendance/0">日付一覧</a></li>
+      <li>
+        <form action="{{ route('logout') }}" method="post">
+          @csrf
+          <button>ログアウト</button>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-<body>
-  <header>
-    <h1>Atte</h1>
-    <div>
-      <a href="/">ホーム</a>
-      <a href="/attendance/0">日付一覧</a>
-      <form action="{{ route('logout') }}" method="post">
-        @csrf
-        <button>ログアウト</button>
-      </form>
-    </div>
-  </header>
-  <div>
+<div class="content">
+  <div class="content__date">
     <a href="{!! '/attendance/'.($num-1) !!}">&lt;</a>
     <p>{{ $fixed_date }}</p>
     <a href="{!! '/attendance/'.($num+1) !!}">&gt;</a>
   </div>
-  <table>
+
+  <table class="content__data">
     <tr>
       <th>名前</th>
       <th>勤務開始</th>
@@ -53,10 +52,11 @@
     </tr>
     @endforeach
   </table>
-  <footer>
-    Atte, inc.
-  </footer>
+  {{ $attendances->links() }}
+</div>
 
-</body>
+<footer>
+  <p>Atte,inc.</p>
+</footer>
 
-</html>
+@endsection

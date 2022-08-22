@@ -66,7 +66,7 @@ class AttendanceController extends Controller
 
         $fixed_date = $date->toDateString();
 
-        $attendances = Attendance::where('date',$fixed_date)->get();
+        $attendances = Attendance::where('date',$fixed_date)->Paginate(5);
 
         foreach ($attendances as $index => $attendance) {
             $rests = $attendance->rests;

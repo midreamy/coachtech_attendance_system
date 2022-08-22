@@ -10,9 +10,13 @@
     body {
       font-family: "sans-serif";
       color: #1a202c;
-      height: 100%;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      box-sizing: border-box;
     }
 
+    /* header */
     header {
       width: 100%;
       height: 4rem;
@@ -60,12 +64,14 @@
       color: #002080;
     }
 
+    /* content */
     .content {
       width: 100%;
       background-color: #f7fafc;
       padding: 2em;
     }
 
+    /* for index.blade.php */
     .content__message {
       display: flex;
       justify-content: center;
@@ -94,7 +100,49 @@
       border: none;
     }
 
+    /* for attendance.blade.php */
+    .content__date{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
 
+    .content__date p{
+      margin: 0 1.5em;
+      font-weight: bold;
+    }
+
+    .content__date a{
+      color: blue;
+      text-decoration: none;
+      padding: 0 5px;
+      border: 1px solid blue;
+    }
+
+    .content__data{
+      width: 90%;
+      height: 25rem;
+      margin: 2rem auto;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .content__data tr{
+      border-top: 1px gray solid;
+    }
+
+    .content__data th, td{
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    svg.w-5.h-5 { 
+    width: 30px;
+    height: 30px;
+    }
+
+    /* footer */
     footer {
       height: 2rem;
       display: flex;
