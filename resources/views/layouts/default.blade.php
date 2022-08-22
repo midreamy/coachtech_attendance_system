@@ -7,19 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atte</title>
   <style>
+    /* 要素サイズ確認用
+    * {
+      outline: 1px solid magenta;
+    } */
+
     body {
       font-family: "sans-serif";
       color: #1a202c;
       margin: 0;
       padding: 0;
-      height: 100vh;
       box-sizing: border-box;
+      width: 100%;
+      height: 100%;
     }
 
     /* header */
     header {
       width: 100%;
-      height: 4rem;
+      height: 15%;
       background-color: white;
       display: flex;
       justify-content: space-between;
@@ -67,12 +73,15 @@
     /* content */
     .content {
       width: 100%;
+      height: 80%;
       background-color: #f7fafc;
-      padding: 2em;
     }
 
     /* for index.blade.php */
     .content__message {
+      margin: 0 auto;
+      padding: 1.5rem;
+      width: 50%;
       display: flex;
       justify-content: center;
     }
@@ -85,7 +94,7 @@
     .content__stamps {
       margin: auto;
       width: 70%;
-      height: 30rem;
+      height: 60%;
     }
 
     td {
@@ -101,25 +110,25 @@
     }
 
     /* for attendance.blade.php */
-    .content__date{
-      display:flex;
+    .content__date {
+      display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .content__date p{
+    .content__date p {
       margin: 0 1.5em;
       font-weight: bold;
     }
 
-    .content__date a{
+    .content__date a {
       color: blue;
       text-decoration: none;
       padding: 0 5px;
       border: 1px solid blue;
     }
 
-    .content__data{
+    .content__data {
       width: 90%;
       height: 25rem;
       margin: 2rem auto;
@@ -127,26 +136,32 @@
       table-layout: fixed;
     }
 
-    .content__data tr{
+    .content__data tr {
       border-top: 1px gray solid;
     }
 
-    .content__data th, td{
+    .content__data th,
+    td {
       text-align: left;
       vertical-align: middle;
     }
 
-    /*paginateメソッドの矢印の大きさ調整のために追加*/
-    svg.w-5.h-5 { 
-    width: 30px;
-    height: 30px;
+    /* paginateメソッドの矢印の大きさ調整のために追加 */
+    svg.w-5.h-5 {
+      width: 30px;
+      height: 30px;
     }
 
     /* footer */
     footer {
-      height: 2rem;
+      height: 5%;
+      width: 100%;
       display: flex;
       justify-content: center;
+      position: absolute;
+      /*←絶対位置*/
+      bottom: 0;
+      /*下に固定*/
       background-color: white;
     }
 
