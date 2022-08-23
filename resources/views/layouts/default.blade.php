@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atte</title>
   <style>
-    /* 要素サイズ確認用
-    * {
+    /* 要素サイズ確認用 */
+    /* * {
       outline: 1px solid magenta;
     } */
 
-    body {
+    html,body {
       font-family: "sans-serif";
       color: #1a202c;
       margin: 0;
@@ -25,7 +25,7 @@
     /* header */
     header {
       width: 100%;
-      height: 15%;
+      height: 13%;
       background-color: white;
       display: flex;
       justify-content: space-between;
@@ -79,11 +79,11 @@
 
     /* for index.blade.php */
     .content__message {
-      margin: 0 auto;
-      padding: 1.5rem;
-      width: 50%;
+      width: 100%;
+      height: 20%;
       display: flex;
       justify-content: center;
+      align-items: center;
     }
 
     .content__message p {
@@ -92,32 +92,45 @@
     }
 
     .content__stamps {
-      margin: auto;
-      width: 70%;
-      height: 60%;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 80%;
     }
 
-    td {
+    .content__stamps table{
+      height: 70%;
+      width: 70%;
+    }
+
+    .content__stamps td{
       text-align: center;
-      vertical-align: middle;
+      height: 50%;
+    }
+
+    .content__stamp form{
+      height: 100%;
     }
 
     .content__stamp button {
       width: 80%;
-      height: 12rem;
+      height: 8rem;
       background-color: white;
       border: none;
+      border-radius: 10px;
     }
 
     /* for attendance.blade.php */
     .content__date {
+      padding: 1em 0;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .content__date p {
-      margin: 0 1.5em;
+      margin-right: 1em;
+      margin-left: 1em;
       font-weight: bold;
     }
 
@@ -129,11 +142,16 @@
     }
 
     .content__data {
-      width: 90%;
-      height: 25rem;
-      margin: 2rem auto;
-      border-collapse: collapse;
+      width: 100%;
+      height: 70%;
       table-layout: fixed;
+      display: flex;
+      justify-content: center;
+    }
+
+    .content__data table{
+      width: 90%;
+      border-collapse: collapse;
     }
 
     .content__data tr {
@@ -144,6 +162,7 @@
     td {
       text-align: left;
       vertical-align: middle;
+      padding: 1rem 1.5rem;
     }
 
     /* paginateメソッドの矢印の大きさ調整のために追加 */
@@ -152,12 +171,20 @@
       height: 30px;
     }
 
+    .content__pagination {
+      width: 100%;
+      height: 10%;
+      display: flex;
+      justify-content: center;
+    }
+
     /* footer */
     footer {
-      height: 5%;
+      height: 7%;
       width: 100%;
       display: flex;
       justify-content: center;
+      align-items: center;
       position: absolute;
       /*←絶対位置*/
       bottom: 0;

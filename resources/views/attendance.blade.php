@@ -24,35 +24,41 @@
     <a href="{!! '/attendance/'.($num+1) !!}">&gt;</a>
   </div>
 
-  <table class="content__data">
-    <tr>
-      <th>名前</th>
-      <th>勤務開始</th>
-      <th>勤務終了</th>
-      <th>休憩時間</th>
-      <th>勤務時間</th>
-    </tr>
-    @foreach($attendances as $attendance)
-    <tr>
-      <td>
-        {{$attendance->user->name}}
-      </td>
-      <td>
-        {{$attendance->start_time}}
-      </td>
-      <td>
-        {{$attendance->end_time}}
-      </td>
-      <td>
-        {{$attendance->rest_sum}}
-      </td>
-      <td>
-        {{$attendance->work_time}}
-      </td>
-    </tr>
-    @endforeach
-  </table>
-  {{ $attendances->links() }}
+  <div class="content__data">
+    <table>
+      <tr>
+        <th>名前</th>
+        <th>勤務開始</th>
+        <th>勤務終了</th>
+        <th>休憩時間</th>
+        <th>勤務時間</th>
+      </tr>
+      @foreach($attendances as $attendance)
+      <tr>
+        <td>
+          {{$attendance->user->name}}
+        </td>
+        <td>
+          {{$attendance->start_time}}
+        </td>
+        <td>
+          {{$attendance->end_time}}
+        </td>
+        <td>
+          {{$attendance->rest_sum}}
+        </td>
+        <td>
+          {{$attendance->work_time}}
+        </td>
+      </tr>
+      @endforeach
+    </table>
+  </div>
+  
+  <div class="content__pagination">
+    {{ $attendances->links() }}
+  </div>
+
 </div>
 
 <footer>

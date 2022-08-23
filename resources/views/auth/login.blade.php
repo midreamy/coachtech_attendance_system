@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <header class="fixed flex items-center h-12  w-full bg-white">
+    <header class="fixed flex items-center h-12 w-full bg-white">
         <h1 class="text-xl font-bold my-4 ml-8">Atte</h1>
     </header>
     <x-auth-card>
@@ -45,7 +45,7 @@
         </form>
     </x-auth-card>
 
-    <footer class="h-8 flex items-center justify-center text-xs">
+    <footer class="h-8 flex items-center justify-center text-xs bg-white">
         <p>Atte,inc.</p>
     </footer>
     
