@@ -12,7 +12,8 @@
       outline: 1px solid magenta;
     } */
 
-    html,body {
+    html,
+    body {
       font-family: "sans-serif";
       color: #1a202c;
       margin: 0;
@@ -30,6 +31,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      box-sizing: border-box;
     }
 
     h1 {
@@ -74,44 +76,77 @@
     .content {
       width: 100%;
       height: 80%;
-      background-color: #f7fafc;
+      background-color: #edf2f7;
+      box-sizing: border-box;
     }
 
-    /* login */
-    .content__title{
-      margin: 20px auto;
+    /* for login & register */
+    .content__title {
+      padding: 20px auto;
       display: flex;
       justify-content: center;
+      box-sizing: border-box;
     }
 
-    .content__title p{
+    .content__title p {
       font-size: 20px;
       font-weight: bold;
     }
 
-    .content__input{
-      width: 30%;
+    .content__input {
+      width: 25%;
       margin: 0 auto;
       display: flex;
       justify-content: center;
     }
 
-    .content__input input{
-      display: block;
-      margin-top: 1rem;
+    .content__input form {
       width: 100%;
-      border-radius: 0.375rem;
-      line-height: 1.5em;
-      border: 1px solid #e2e8f0;;
-      
     }
 
-    .content__input button{
-      margin-top: 1rem;
+    .content__input input {
+      display: block;
+      margin-top: 1.5rem;
+      width: 100%;
+      border-radius: 0.375rem;
+      height: 2.5em;
+      border: 1px solid #718096;
+      color: #718096;
+      padding-left: 1em;
+      box-sizing: border-box;
+    }
+
+    .content__input button {
+      margin-top: 2rem;
       width: 100%;
       background-color: #4299e1;
       color: white;
       border-radius: 0.375rem;
+      height: 2.5em;
+      border: 1px solid #e2e8f0;
+      box-sizing: border-box;
+    }
+
+    .content__input--guide {
+      margin: 2.5rem auto;
+      width: 100%;
+    }
+
+    .content__input--guide p {
+      margin: 0 auto;
+      color: #718096;
+      font-size: 0.75em;
+      text-align: center;
+    }
+
+    .content__input--guide a {
+      display: block;
+      width: 100%;
+      margin-top: 1em;
+      font-size: 0.75em;
+      color: #4299e1;
+      text-align: center;
+      text-decoration: none;
     }
 
     /* for index.blade.php */
@@ -135,17 +170,17 @@
       height: 80%;
     }
 
-    .content__stamps table{
+    .content__stamps table {
       height: 70%;
       width: 70%;
     }
 
-    .content__stamps td{
+    .content__stamps td {
       text-align: center;
       height: 50%;
     }
 
-    .content__stamp form{
+    .content__stamp form {
       height: 100%;
     }
 
@@ -186,7 +221,7 @@
       justify-content: center;
     } */
 
-    .content__data table{
+    .content__data table {
       margin: 30px auto;
       width: 80%;
       border-collapse: collapse;
