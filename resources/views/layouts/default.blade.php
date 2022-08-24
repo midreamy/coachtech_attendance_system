@@ -77,6 +77,43 @@
       background-color: #f7fafc;
     }
 
+    /* login */
+    .content__title{
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .content__title p{
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .content__input{
+      width: 30%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .content__input input{
+      display: block;
+      margin-top: 1rem;
+      width: 100%;
+      border-radius: 0.375rem;
+      line-height: 1.5em;
+      border: 1px solid #e2e8f0;;
+      
+    }
+
+    .content__input button{
+      margin-top: 1rem;
+      width: 100%;
+      background-color: #4299e1;
+      color: white;
+      border-radius: 0.375rem;
+    }
+
     /* for index.blade.php */
     .content__message {
       width: 100%;
@@ -132,6 +169,7 @@
       margin-right: 1em;
       margin-left: 1em;
       font-weight: bold;
+      font-size: 20px;
     }
 
     .content__date a {
@@ -141,28 +179,30 @@
       border: 1px solid blue;
     }
 
-    .content__data {
+    /* .content__data {
       width: 100%;
       height: 70%;
-      table-layout: fixed;
       display: flex;
       justify-content: center;
-    }
+    } */
 
     .content__data table{
-      width: 90%;
+      margin: 30px auto;
+      width: 80%;
       border-collapse: collapse;
     }
 
     .content__data tr {
       border-top: 1px gray solid;
+
     }
 
     .content__data th,
     td {
       text-align: left;
       vertical-align: middle;
-      padding: 1rem 1.5rem;
+      padding: 0 1.5rem;
+      height: 3em;
     }
 
     /* paginateメソッドの矢印の大きさ調整のために追加 */
@@ -174,8 +214,10 @@
     .content__pagination {
       width: 100%;
       height: 10%;
+      margin-top: 30px;
       display: flex;
       justify-content: center;
+      align-items: flex-end;
     }
 
     /* footer */

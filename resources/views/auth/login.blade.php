@@ -1,32 +1,35 @@
-<x-guest-layout>
-    <header class="fixed flex items-center h-12 w-full bg-white">
-        <h1 class="text-xl font-bold my-4 ml-8">Atte</h1>
-    </header>
-    <x-auth-card>
-        <x-slot name="logo">
-            <p class="text-lg font-bold">ログイン</p>
-        </x-slot>
+@extends('layouts.default')
 
+@section('content')
+<header>
+  <h1>Atte</h1>
+</header>
+
+<div class="content">
+    <div class="content__title">
+        <p class="text-lg font-bold">ログイン</p>
+    </div>
+
+    <div>
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    </div>
 
+    <div class="content__input">
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
             <!-- Email Address -->
             <div>
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus placeholder="メールアドレス"/>
+                <input id="email" type="email" name="email" :value="old('email')" required autofocus placeholder="メールアドレス"/>
             </div>
 
             <!-- Password -->
-            <div class="mt-4">
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" placeholder="パスワード"/>
+            <div>
+                <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="パスワード"/>
             </div>
 
             <div class="mt-8">
@@ -41,12 +44,13 @@
                 <a href="/register" class="block text-center text-blue-500">会員登録</a>
                 </p>
             </div>
-            
+        
         </form>
-    </x-auth-card>
+    </div>
+</div>
 
-    <footer class="h-8 flex items-center justify-center text-xs bg-white">
-        <p>Atte,inc.</p>
-    </footer>
-    
-</x-guest-layout>
+<footer>
+    <p>Atte,inc.</p>
+</footer>
+
+@endsection
