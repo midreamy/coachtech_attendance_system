@@ -222,7 +222,7 @@
     } */
 
     .content__data table {
-      margin: 30px auto;
+      margin: 10px auto;
       width: 80%;
       border-collapse: collapse;
     }
